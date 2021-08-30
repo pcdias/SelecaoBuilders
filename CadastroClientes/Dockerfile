@@ -1,1 +1,6 @@
-FROM maven:3.8.2-openjdk-16-slim
+FROM openjdk:16-jdk-slim
+VOLUME /tpm
+ADD target/CadastroClientes-0.0.1-SNAPSHOT.jar app.jar
+EXPOSE 8080
+RUN bash -c 'touch /app.jar'
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]

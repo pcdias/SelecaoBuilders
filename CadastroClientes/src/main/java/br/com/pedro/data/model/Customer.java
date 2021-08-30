@@ -31,6 +31,13 @@ public class Customer implements Serializable {
 	
 	public Customer() {}
 	
+	public Customer(String nome, String endereco, LocalDate dataNascimento) {
+		super();
+		this.nome = nome;
+		this.endereco = endereco;
+		this.dataNascimento = dataNascimento;
+	}
+
 	public Long getId() {
 		return id;
 	}
